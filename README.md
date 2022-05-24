@@ -1,7 +1,10 @@
 # Exp-6-Synchornous-counters - up counter and down counter 
-### AIM: To implement 4 bit up and down counters and validate  functionality.
-### HARDWARE REQUIRED:  – PC, Cyclone II , USB flasher
-### SOFTWARE REQUIRED:   Quartus prime
+### AIM: 
+To implement 4 bit up and down counters and validate  functionality.
+### HARDWARE REQUIRED: 
+PC, Cyclone II , USB flasher
+### SOFTWARE REQUIRED: 
+Quartus prime
 ### THEORY 
 
 ## UP COUNTER 
@@ -46,16 +49,58 @@ This type of counter is normally referred to as a Down Counter, (CTD). In a bina
 
 4-bit Count Down Counter
 ### Procedure
-/* write all the steps invloved */
+1.Create module projectname(input ,output) to start the verilog programming.
+
+
+2.create a if loop condition to increase the count in counter_up function.
+
+
+3.Similarly, create another loop for the down counter.
+
+
+4.End the verilog program using keyword endmodule.
+
+
+5.Get the timing diagram and RTL realization diagram for respective Counters.
+
 
 
 
 ### PROGRAM 
-/*
+
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+Developed by: JAGAN 
+RegisterNumber: 212221230037
+UP COUNTER:-
+
+
+module uc(input clk,input reset,output[0:3]counter);
+reg[0:3] counter_up;
+always@(posedge clk or posedge reset)
+begin
+if(reset)
+counter_up<=4'd0;
+else
+counter_up<=counter_up+4'd1;
+end
+assign counter=counter_up;
+endmodule
+
+
+DOWN COUNTER:-
+
+module dc(input clk,input reset,output[0:3]counter);
+reg[0:3] counter_down;
+always@(posedge clk or posedge reset)
+begin
+if(reset)
+counter_down<=4'd0;
+else
+counter_down<=counter_down-4'd1;
+end
+assign counter=counter_down;
+endmodule
+
 
 
 
@@ -63,8 +108,10 @@ RegisterNumber:
 
 
 ### RTL LOGIC UP COUNTER AND DOWN COUNTER  
+![r1](https://user-images.githubusercontent.com/94154941/169868589-a18e8680-a56a-40e5-ae51-fb6fe96b0923.png)
 
 
+![r2](https://user-images.githubusercontent.com/94154941/169868602-eba844d6-062a-41e8-9105-2971fb9da4a5.png)
 
 
 
@@ -73,16 +120,22 @@ RegisterNumber:
 
 
 ### TIMING DIGRAMS FOR COUNTER  
+![r3](https://user-images.githubusercontent.com/94154941/169868615-7ae92592-56ad-4d3c-b5b2-518f84ff39d9.png)
 
 
+![r4](https://user-images.githubusercontent.com/94154941/169868628-dfd8e787-b75e-4341-a0e5-f947f2e9a0f7.png)
 
 
 
 ### TRUTH TABLE 
 
+![r5](https://user-images.githubusercontent.com/94154941/169868635-371b8e59-6594-4f9c-be75-ae3015d7d140.png)
 
 
+![r6](https://user-images.githubusercontent.com/94154941/169868643-dcbb0255-1452-466f-9e5c-80746adcc60b.png)
 
 
 
 ### RESULTS 
+
+Thus Synchornous counters up counter and down counter circuit are studied and the truth table for different logic gates are verified.
